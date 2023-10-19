@@ -1,0 +1,13 @@
+{
+    "logInScreenWelcomeMessage": "Bonjour, bon retour!",
+    "logInScreenGeneralHint": "Connectez-vous à votre compte",
+    "logInEmailTextFieldHint": "Votre e-mail",
+    "logInPasswordTextFieldHint": "Votre mot de passe",
+    "forgotPasswordButtonLable": "Mot de passe oublié?",
+    "logInButtonLable": "Se Connecter",
+    "orLogInWith": "Ou connectez-vous avec",
+    "appleButtonLable": "Apple",
+    "googleButtonLable": "Google",
+    "dontHaveAnAccount": "Vous n'avez pas de compte ?",
+    "signUpTextButtonLable": "S'inscrire"
+}
