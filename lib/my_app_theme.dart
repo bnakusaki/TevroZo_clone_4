@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:tevrozo_clone_four/shared/size_config.dart';
 
 @immutable
 class MyAppTheme {
   const MyAppTheme({
     this.seedColor = const Color.fromARGB(255, 100, 59, 234),
+    required this.context,
   });
 
   final Color seedColor;
+  final BuildContext context;
 
   ColorScheme _colorScheme() {
     return ColorScheme.fromSeed(
@@ -37,28 +40,40 @@ class MyAppTheme {
         hintStyle: TextStyle(color: colorScheme.secondary),
         contentPadding: const EdgeInsets.all(8.0),
         filled: true,
-        constraints: const BoxConstraints(maxHeight: 50.0),
+        constraints: BoxConstraints(maxHeight: SizeConfig(context).blockSizeHorizontal() * 15.4),
       ),
 
       /// FilledButton theme.
       filledButtonTheme: FilledButtonThemeData(
         style: FilledButton.styleFrom(
           shape: const StadiumBorder(),
-          fixedSize: const Size(double.maxFinite, 50.0),
+          fixedSize: Size(double.maxFinite, SizeConfig(context).blockSizeVertical() * 6),
         ),
       ),
 
       /// OutlinedButton theme.
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          fixedSize: const Size(150, 50),
+          fixedSize: Size(150, SizeConfig(context).blockSizeVertical() * 6),
           foregroundColor: colorScheme.scrim,
         ),
       ),
       chipTheme: const ChipThemeData(
         shape: StadiumBorder(),
-        padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
+        padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
       ),
+      cardTheme: CardTheme(
+        color: colorScheme.onPrimary,
+        surfaceTintColor: Colors.transparent,
+      ),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+          shape: const CircleBorder(),
+          elevation: 0.0,
+          backgroundColor: colorScheme.primary.withOpacity(0.1),
+          sizeConstraints: const BoxConstraints(
+            minHeight: 45,
+            minWidth: 45,
+          )),
     );
   }
 

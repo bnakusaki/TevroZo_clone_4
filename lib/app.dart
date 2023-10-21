@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const myAppTheme = MyAppTheme();
+    final myAppTheme = MyAppTheme(context: context);
 
     return MaterialApp(
       title: 'TevroZo clone four',
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: const [Locale('en'), Locale('fr')],
-      locale: const Locale('en'),
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       theme: myAppTheme.toThemeData(),
       home: const LoginScreen(),
     );
