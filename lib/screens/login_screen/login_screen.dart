@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
+import 'package:iconly/iconly.dart';
 import 'package:tevrozo_clone_four/assets.dart';
 import 'package:tevrozo_clone_four/screens/login_screen/auth_text_fields.dart';
 import 'package:tevrozo_clone_four/screens/login_screen/federated_auth_buttons.dart';
@@ -12,9 +13,38 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+
     final sizeConfig = SizeConfig(context);
     final heightBlocks = sizeConfig.blockSizeVertical();
     final widthBlocks = sizeConfig.blockSizeHorizontal();
+
+    final textStyle = Theme.of(context).textTheme;
+
+    final List<AuthTextField> authTextFields = [
+      AuthTextField(
+        prefixIcon: IconlyLight.message,
+        hintText: l10n.logInEmailTextFieldHint,
+        suffixIcon: null,
+      ),
+      AuthTextField(
+        prefixIcon: IconlyLight.lock,
+        hintText: l10n.logInPasswordTextFieldHint,
+        suffixIcon: IconlyLight.hide,
+      ),
+    ];
+
+    final List<FederatedAuthButtonModel> federatedAuthButtons = [
+      FederatedAuthButtonModel(
+        imagePath: ImagePaths.appleLogo,
+        label: l10n.appleButtonLable,
+        onPressed: () {},
+      ),
+      FederatedAuthButtonModel(
+        imagePath: ImagePaths.googleLogo,
+        label: l10n.googleButtonLable,
+        onPressed: () {},
+      ),
+    ];
 
     return Scaffold(
       appBar: AppBar(leading: const BackButton()),
@@ -39,7 +69,7 @@ class LoginScreen extends StatelessWidget {
               ),
               Text(
                 l10n.logInScreenGeneralHint,
-                style: Theme.of(context).textTheme.bodyLarge,
+                style: textStyle.bodyLarge,
               ),
               SizedBox(height: heightBlocks * 3.4),
               ...List.generate(authTextFields.length, (index) {
