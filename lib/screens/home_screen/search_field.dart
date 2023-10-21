@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:iconly/iconly.dart';
 
 class SearchField extends StatelessWidget {
@@ -9,6 +10,8 @@ class SearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme.onPrimary;
+    final l10n = AppLocalizations.of(context)!;
+
     return TextFormField(
       decoration: InputDecoration(
         prefixIcon: Icon(
@@ -19,7 +22,7 @@ class SearchField extends StatelessWidget {
           IconlyLight.scan,
           color: color.withOpacity(0.6),
         ),
-        hintText: 'Track your package',
+        hintText: l10n.trackYouPackage,
         hintStyle: TextStyle(
           color: color.withOpacity(0.5),
         ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tevrozo_clone_four/assets.dart';
 
 class PromotionCard extends StatelessWidget {
   const PromotionCard({
@@ -7,6 +9,9 @@ class PromotionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final color = Theme.of(context).colorScheme;
+
     return Container(
       height: 150,
       margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -16,11 +21,10 @@ class PromotionCard extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            Theme.of(context).colorScheme.primary.withOpacity(0.01),
-            Colors.white,
-            Theme.of(context).colorScheme.primary.withOpacity(0.1),
+            color.onPrimary,
+            color.primary.withOpacity(0.01),
           ],
-          stops: const [0.09, 0.05, 0.75],
+          stops: const [0.2, 0.9],
         ),
         borderRadius: BorderRadius.circular(20),
       ),
@@ -32,9 +36,9 @@ class PromotionCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Packet Discount Coupon',
+                l10n.packetDiscountCoupon,
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: color.primary,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -42,11 +46,11 @@ class PromotionCard extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    'up\nto',
-                    style: TextStyle(color: Theme.of(context).colorScheme.primary),
+                    l10n.upTo,
+                    style: TextStyle(color: color.primary),
                   ),
                   Text(
-                    '15% OFF',
+                    l10n.percentageOff(15),
                     style: Theme.of(context)
                         .textTheme
                         .displaySmall!
@@ -63,15 +67,15 @@ class PromotionCard extends StatelessWidget {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      Colors.white,
-                      Theme.of(context).colorScheme.primary.withOpacity(0.7),
+                      color.onPrimary,
+                      color.primary.withOpacity(0.7),
                     ],
                     stops: const [0.01, 0.7],
                   ),
                 ),
-                child: const Text(
-                  'SV-DAY0001',
-                  style: TextStyle(color: Colors.white),
+                child: Text(
+                  l10n.promoCode,
+                  style: TextStyle(color: color.onPrimary),
                 ),
               )
             ],
@@ -79,7 +83,7 @@ class PromotionCard extends StatelessWidget {
           Align(
             alignment: Alignment.centerRight,
             child: Image.asset(
-              'assets/images/cube.webp',
+              ImagePaths.cube,
               height: 150,
               fit: BoxFit.cover,
             ),

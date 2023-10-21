@@ -9,5 +9,49 @@
     "appleButtonLable": "Apple",
     "googleButtonLable": "Google",
     "dontHaveAnAccount": "Don't have an account?",
-    "signUpTextButtonLable": "Sign Up"
+    "signUpTextButtonLable": "Sign Up",
+    "insightsForYou": "Insights for you",
+    "viewMore": "View more",
+    "insightMessage1": "Best product of the week",
+    "insightMessage2": "Second best product of the week",
+    "packetDiscountCoupon": "Packet Discount Coupon",
+    "upTo": "up\nto",
+    "percentageOff": "{value}% OFF",
+    "@percentageOff": {
+        "placeholders": {
+            "value": {
+                "type": "int"
+            }
+        }
+    },
+    "promoCode": "SV-DAY0001",
+    "trackYouPackage": "Track your package",
+    "svTruck": "SV-Truck",
+    "svAir": "SV-Air",
+    "svSea": "SV-Sea",
+    "help": "Help",
+    "balanceCardtitle": "Your balance\n",
+    "balance": "{value}",
+    "@balance": {
+      "placeholders": {
+        "value": {
+          "type": "double",
+          "format": "currency",
+          "optionalParameters": {
+            "decimalDigits": 2
+          }
+        }
+      }
+    },
+    "topUp": "Top-up",
+    "details": "Details",
+    "svPoints": "{count, plural, =0{  SV-Point} =1{  SV-Point} other{  SV-Points}}",
+        "@svPoints": {
+        "placeholders": {
+            "count": {
+            "type": "num",
+            "format": "compact"
+            }
+        }
+        }
 }

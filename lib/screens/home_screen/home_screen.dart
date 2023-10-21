@@ -1,7 +1,11 @@
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:iconly/iconly.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:tevrozo_clone_four/assets.dart';
+import 'package:tevrozo_clone_four/screens/home_screen/insight_card.dart';
+import 'package:tevrozo_clone_four/screens/home_screen/insights_model.dart';
 import 'package:tevrozo_clone_four/screens/home_screen/promotion_card.dart';
 import 'package:tevrozo_clone_four/screens/home_screen/search_field.dart';
 import 'package:tevrozo_clone_four/screens/home_screen/serivce_model.dart';
@@ -21,9 +25,26 @@ class _HomeScreenState extends State<HomeScreen> {
   PageController controller_1 = PageController();
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     final sizeConfig = SizeConfig(context);
     final widthBlocks = sizeConfig.blockSizeHorizontal();
     final heightBlocks = sizeConfig.blockSizeVertical();
+
+    final color = Theme.of(context).colorScheme;
+
+    List<InsightsModel> insights = [
+      InsightsModel(imagePath: ImagePaths.female_1, message: l10n.insightMessage1),
+      InsightsModel(imagePath: ImagePaths.female_2, message: l10n.insightMessage2),
+    ];
+
+    List<ServiceModel> services = [
+      ServiceModel(icon: Icons.fire_truck_outlined, lable: l10n.svTruck),
+      ServiceModel(icon: Icons.airplanemode_active, lable: l10n.svAir),
+      ServiceModel(icon: IconlyLight.activity, lable: l10n.svSea),
+      ServiceModel(icon: Icons.help, lable: l10n.help),
+    ];
+
     return Container(
       decoration: BoxDecoration(gradient: purplePinkGradient(context)),
       child: SafeArea(
@@ -44,13 +65,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       badgeStyle: badges.BadgeStyle(
                         padding: const EdgeInsets.all(7),
                         borderSide: BorderSide(
-                          color: Theme.of(context).colorScheme.onPrimary,
+                          color: color.onPrimary,
                           width: 2.0,
                         ),
                       ),
                       child: Icon(
                         IconlyLight.notification,
-                        color: Theme.of(context).colorScheme.onPrimary,
+                        color: color.onPrimary,
                       ),
                     ),
                   ),
@@ -59,10 +80,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Expanded(
               child: Container(
-                margin: const EdgeInsets.only(top: 20.0),
+                margin: EdgeInsets.only(top: sizeConfig.screenHorizontalPadding),
                 padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surfaceVariant,
+                  color: color.surfaceVariant,
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30),
@@ -72,14 +93,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     const UserBalance(),
                     Padding(
-                      padding: const EdgeInsets.only(top: 30.0, bottom: 30.0),
+                      padding: EdgeInsets.symmetric(vertical: heightBlocks * 3.4),
                       child: SizedBox(
-                        height: 108,
+                        height: 100,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: List.generate(services.length, (index) {
                             final service = services[index];
-
                             return Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -92,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 150,
+                      height: heightBlocks * 16.9,
                       child: PageView(
                         controller: controller_1,
                         children: List.generate(
@@ -102,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 15.0),
+                      padding: EdgeInsets.only(top: heightBlocks * 1.69),
                       child: Center(
                         child: SmoothPageIndicator(
                           controller: controller_1,
@@ -110,52 +130,37 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Insights for you',
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleLarge!
-                              .copyWith(fontWeight: FontWeight.bold),
-                        ),
-                        TextButton(onPressed: () {}, child: const Text('View more'))
-                      ],
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: heightBlocks * 2.0,
+                        bottom: 10,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            l10n.insightsForYou,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge!
+                                .copyWith(fontWeight: FontWeight.bold),
+                          ),
+                          TextButton(onPressed: () {}, child: Text(l10n.viewMore))
+                        ],
+                      ),
                     ),
                     SizedBox(
-                      height: 250,
+                      height: heightBlocks * 28.2,
                       child: ListView.separated(
                         scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) => ShaderMask(
-                          shaderCallback: (bounds) {
-                            return LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                Theme.of(context).colorScheme.primary,
-                                Colors.white,
-                                Theme.of(context).colorScheme.primary,
-                              ],
-                              stops: const [0.0, 0.25, 0.75],
-                            ).createShader(bounds);
-                          },
-                          child: Container(
-                            height: 250,
-                            width: 300,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: const DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage('assets/images/avatar_1.jpg'),
-                              ),
-                            ),
-                          ),
-                        ),
+                        itemBuilder: (context, index) {
+                          final insight = insights[index];
+                          return InsightCard(insight: insight);
+                        },
                         separatorBuilder: (BuildContext context, int index) {
                           return const SizedBox(width: 20);
                         },
-                        itemCount: 2,
+                        itemCount: insights.length,
                       ),
                     ),
                   ],

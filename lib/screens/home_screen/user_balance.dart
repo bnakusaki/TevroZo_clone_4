@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class UserBalance extends StatelessWidget {
   const UserBalance({
@@ -7,6 +8,8 @@ class UserBalance extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(15.0),
@@ -18,9 +21,9 @@ class UserBalance extends StatelessWidget {
                 Text.rich(
                   TextSpan(
                     children: [
-                      const TextSpan(text: 'Your balance\n'),
+                      TextSpan(text: l10n.balanceCardtitle),
                       TextSpan(
-                        text: '\$1250.12',
+                        text: l10n.balance(1250.12),
                         style: Theme.of(context)
                             .textTheme
                             .headlineMedium!
@@ -33,10 +36,10 @@ class UserBalance extends StatelessWidget {
                 const SizedBox(height: 45, child: VerticalDivider()),
                 TextButton(
                   onPressed: () {},
-                  child: const Column(
+                  child: Column(
                     children: [
-                      Icon(Icons.wallet),
-                      Text('Top-up', style: TextStyle(color: Colors.black38)),
+                      const Icon(Icons.wallet),
+                      Text(l10n.topUp, style: const TextStyle(color: Colors.black38)),
                     ],
                   ),
                 )
@@ -55,11 +58,11 @@ class UserBalance extends StatelessWidget {
                               .textTheme
                               .titleMedium!
                               .copyWith(fontWeight: FontWeight.bold)),
-                      const TextSpan(text: ' SV-Points'),
+                      TextSpan(text: l10n.svPoints(1200)),
                     ],
                   ),
                 ),
-                TextButton(onPressed: () {}, child: const Text('Details'))
+                TextButton(onPressed: () {}, child: Text(l10n.details))
               ],
             )
           ],
