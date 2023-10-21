@@ -53,5 +53,23 @@
             "format": "compact"
             }
         }
-        }
+        },
+    "myPoints": "My Points",
+    "myvoucher": "My Voucher",
+    "myMission": "My Mission",
+    "premiumLable": "Premium Member | NGOT986",
+    "accountDetails": "Account Details",
+    "detailProfile": "Detail Profile",
+    "informationAccont": "Information account",
+    "transactionHistory": "Transaction History",
+    "yourTransaction": "You tranctioon history",
+    "paymentAccount": "Payment Account",
+    "manageYourAccount": "Manage your payment",
+    "settings": "Settings",
+    "notification": "Notification",
+    "yourNotificationSettings": "Your notification settings",
+    "home": "Home",
+    "packet": "Packet",
+    "promo": "Promo",
+    "profile": "Profile"
 }

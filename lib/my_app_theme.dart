@@ -74,6 +74,10 @@ class MyAppTheme {
             minHeight: 45,
             minWidth: 45,
           )),
+      bottomAppBarTheme: BottomAppBarTheme(
+        surfaceTintColor: colorScheme.onPrimary,
+        color: colorScheme.onPrimary,
+      ),
     );
   }
 

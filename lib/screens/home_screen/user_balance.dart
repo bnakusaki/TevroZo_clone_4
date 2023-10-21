@@ -39,7 +39,10 @@ class UserBalance extends StatelessWidget {
                   child: Column(
                     children: [
                       const Icon(Icons.wallet),
-                      Text(l10n.topUp, style: const TextStyle(color: Colors.black38)),
+                      Text(l10n.topUp,
+                          style: TextStyle(
+                              color: Theme.of(context).colorScheme.scrim,
+                              fontWeight: FontWeight.w400)),
                     ],
                   ),
                 )
@@ -54,10 +57,9 @@ class UserBalance extends StatelessWidget {
                     children: [
                       TextSpan(
                           text: '🥇1200',
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium!
-                              .copyWith(fontWeight: FontWeight.bold)),
+                          style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                                fontWeight: FontWeight.bold,
+                              )),
                       TextSpan(text: l10n.svPoints(1200)),
                     ],
                   ),
