@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:iconly/iconly.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:tevrozo_clone_four/assets.dart';
 import 'package:tevrozo_clone_four/screens/home_screen/insight_card.dart';
 import 'package:tevrozo_clone_four/screens/home_screen/insights_model.dart';
 import 'package:tevrozo_clone_four/screens/home_screen/promotion_card.dart';
@@ -11,6 +10,7 @@ import 'package:tevrozo_clone_four/screens/home_screen/search_field.dart';
 import 'package:tevrozo_clone_four/screens/home_screen/serivce_model.dart';
 import 'package:tevrozo_clone_four/screens/home_screen/service_item.dart';
 import 'package:tevrozo_clone_four/screens/home_screen/user_balance.dart';
+import 'package:tevrozo_clone_four/shared/assets.dart';
 import 'package:tevrozo_clone_four/shared/size_config.dart';
 import 'package:tevrozo_clone_four/shared/styles.dart';
 

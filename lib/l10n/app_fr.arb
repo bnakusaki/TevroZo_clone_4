@@ -9,5 +9,67 @@
     "appleButtonLable": "Apple",
     "googleButtonLable": "Google",
     "dontHaveAnAccount": "Vous n'avez pas de compte ?",
-    "signUpTextButtonLable": "S'inscrire"
+    "signUpTextButtonLable": "S'inscrire",
+    "insightsForYou": "Des informations pour vous",
+    "viewMore": "Voir plus",
+    "insightMessage1": "Meilleur produit de la semaine",
+    "insightMessage2": "Deuxième meilleur produit de la semaine",
+    "packetDiscountCoupon": "Coupon de réduction sur les paquets",
+    "upTo": "jusqu'à",
+    "percentageOff": "{value}% DÉSACTIVÉ",
+    "@percentageOff": {
+        "placeholders": {
+            "value": {
+                "type": "int"
+            }
+        }
+    },
+    "promoCode": "SV-DAY0001",
+    "trackYouPackage": "Suivre votre colis",
+    "svTruck": "SV-Camion",
+    "svAir": "SV-Air",
+    "svSea": "SV-Mer",
+    "help": "Aide",
+    "balanceCardtitle": "Votre solde\n",
+    "balance": "{value}",
+    "@balance": {
+      "placeholders": {
+        "value": {
+          "type": "double",
+          "format": "currency",
+          "optionalParameters": {
+            "decimalDigits": 2
+          }
+        }
+      }
+    },
+    "topUp": "Votre solde",
+    "details": "Détails",
+    "svPoints": "{count, plural, =0{  SV-Indiquer} =1{  SV-Indiquer} other{  SV-Points}}",
+        "@svPoints": {
+        "placeholders": {
+            "count": {
+            "type": "num",
+            "format": "compact"
+            }
+        }
+        },
+    "myPoints": "Mes Points",
+    "myvoucher": "Mon bon",
+    "myMission": "Ma mission",
+    "premiumLable": "Membre Premium | NGOT986",
+    "accountDetails": "Détails du compte",
+    "detailProfile": "Profil détaillé",
+    "informationAccont": "Compte d'information",
+    "transactionHistory": "Historique des transactions",
+    "yourTransaction": "Votre historique de transaction",
+    "paymentAccount": "Compte de paiement",
+    "manageYourAccount": "Gérez votre paiement",
+    "settings": "Paramètres",
+    "notification": "Notification",
+    "yourNotificationSettings": "Vos paramètres de notification",
+    "home": "Maison",
+    "packet": "Paquet",
+    "promo": "Promotion",
+    "profile": "Profil"
 }

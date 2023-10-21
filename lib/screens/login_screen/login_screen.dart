@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconly/iconly.dart';
-import 'package:tevrozo_clone_four/assets.dart';
 import 'package:tevrozo_clone_four/screens/login_screen/auth_text_fields.dart';
 import 'package:tevrozo_clone_four/screens/login_screen/federated_auth_buttons.dart';
+import 'package:tevrozo_clone_four/shared/assets.dart';
 import 'package:tevrozo_clone_four/shared/size_config.dart';
 
 class LoginScreen extends StatelessWidget {
