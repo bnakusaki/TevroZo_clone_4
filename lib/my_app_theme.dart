@@ -69,7 +69,7 @@ class MyAppTheme {
       floatingActionButtonTheme: FloatingActionButtonThemeData(
           shape: const CircleBorder(),
           elevation: 0.0,
-          backgroundColor: colorScheme.primary.withOpacity(0.1),
+          backgroundColor: colorScheme.onPrimary.withOpacity(0.1),
           sizeConstraints: const BoxConstraints(
             minHeight: 45,
             minWidth: 45,

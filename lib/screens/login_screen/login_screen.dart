@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tevrozo_clone_four/assets.dart';
-import 'package:tevrozo_clone_four/screens/home_screen/home_screen.dart';
 import 'package:tevrozo_clone_four/screens/login_screen/auth_text_fields.dart';
 import 'package:tevrozo_clone_four/screens/login_screen/federated_auth_buttons.dart';
 import 'package:tevrozo_clone_four/shared/size_config.dart';
@@ -13,8 +13,8 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final sizeConfig = SizeConfig(context);
-    final heightBlocks = sizeConfig.blockSizeHorizontal();
-    final widthBlocks = sizeConfig.blockSizeVertical();
+    final heightBlocks = sizeConfig.blockSizeVertical();
+    final widthBlocks = sizeConfig.blockSizeHorizontal();
 
     return Scaffold(
       appBar: AppBar(leading: const BackButton()),
@@ -24,11 +24,11 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             children: [
               CircleAvatar(
-                radius: widthBlocks * 6,
+                radius: widthBlocks * 11.0,
                 backgroundImage: AssetImage(ImagePaths.defaultAvatar),
               ),
               Padding(
-                padding: EdgeInsets.only(top: heightBlocks * 3, bottom: heightBlocks * 1.5),
+                padding: EdgeInsets.only(top: heightBlocks * 2.82, bottom: heightBlocks * 1.5),
                 child: Text(
                   l10n.logInScreenWelcomeMessage,
                   style: Theme.of(context)
@@ -65,17 +65,13 @@ class LoginScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: heightBlocks * 1.2),
                 child: FilledButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const HomeScreen(),
-                    ));
-                  },
+                  onPressed: () => context.go('/home'),
                   child: Text(l10n.logInButtonLable),
                 ),
               ),
               Row(
                 children: [
-                  Expanded(child: Divider(height: heightBlocks * 15)),
+                  Expanded(child: Divider(height: heightBlocks * 10)),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Text(l10n.orLogInWith),
@@ -116,7 +112,7 @@ class LoginScreen extends StatelessWidget {
                   },
                 ),
               ),
-              SizedBox(height: heightBlocks * 30),
+              SizedBox(height: heightBlocks * 14),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [

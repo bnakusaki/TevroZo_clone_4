@@ -9,6 +9,7 @@ class PromotionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 150,
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -19,7 +20,7 @@ class PromotionCard extends StatelessWidget {
             Colors.white,
             Theme.of(context).colorScheme.primary.withOpacity(0.1),
           ],
-          stops: const [0.05, 0.05, 0.75],
+          stops: const [0.09, 0.05, 0.75],
         ),
         borderRadius: BorderRadius.circular(20),
       ),
@@ -80,7 +81,6 @@ class PromotionCard extends StatelessWidget {
             child: Image.asset(
               'assets/images/cube.webp',
               height: 150,
-              width: 130,
               fit: BoxFit.cover,
             ),
           ),

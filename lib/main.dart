@@ -5,7 +5,7 @@ import 'package:tevrozo_clone_four/app.dart';
 void main() {
   runApp(
     DevicePreview(
-      enabled: !true,
+      enabled: false,
       builder: (context) => const MyApp(),
     ),
   );
