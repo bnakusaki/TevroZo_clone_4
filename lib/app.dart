@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     final myAppTheme = MyAppTheme(context: context);
 
     return MaterialApp.router(
-      title: 'TevroZo clone four',
+      title: 'TevroZo clone 4',
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
@@ -21,11 +21,10 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: const [Locale('en'), Locale('fr')],
-      locale: DevicePreview.locale(context),
+      locale: const Locale('en'),
       builder: DevicePreview.appBuilder,
       theme: myAppTheme.toThemeData(),
       routerConfig: routes,
-      // home: const LoginScreen(),
     );
   }
 }

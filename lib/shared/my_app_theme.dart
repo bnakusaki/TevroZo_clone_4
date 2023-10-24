@@ -27,7 +27,8 @@ class MyAppTheme {
       textTheme: textTheme,
       colorScheme: _colorScheme(),
 
-      /// InputDecorations, for text form fields.
+      // Widget themes.
+      // InputDecorations, for text form fields.
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
           borderSide: BorderSide.none,
@@ -43,7 +44,7 @@ class MyAppTheme {
         constraints: BoxConstraints(maxHeight: SizeConfig(context).blockSizeHorizontal() * 15.4),
       ),
 
-      /// FilledButton theme.
+      // FilledButton theme.
       filledButtonTheme: FilledButtonThemeData(
         style: FilledButton.styleFrom(
           shape: const StadiumBorder(),
@@ -51,21 +52,27 @@ class MyAppTheme {
         ),
       ),
 
-      /// OutlinedButton theme.
+      // OutlinedButton theme.
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           fixedSize: Size(150, SizeConfig(context).blockSizeVertical() * 6),
           foregroundColor: colorScheme.scrim,
         ),
       ),
+
+      // Chip Tteme.
       chipTheme: const ChipThemeData(
         shape: StadiumBorder(),
         padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
       ),
+
+      // Card theme.
       cardTheme: CardTheme(
         color: colorScheme.onPrimary,
         surfaceTintColor: Colors.transparent,
       ),
+
+      // Floating action button theme.
       floatingActionButtonTheme: FloatingActionButtonThemeData(
           shape: const CircleBorder(),
           elevation: 0.0,
@@ -74,6 +81,8 @@ class MyAppTheme {
             minHeight: 45,
             minWidth: 45,
           )),
+
+      // Bottom app bar theme.
       bottomAppBarTheme: BottomAppBarTheme(
         surfaceTintColor: colorScheme.onPrimary,
         color: colorScheme.onPrimary,
@@ -81,6 +90,7 @@ class MyAppTheme {
     );
   }
 
+  // Text themes.
   TextTheme _textTheme() {
     return const TextTheme(
       labelLarge: TextStyle(fontWeight: FontWeight.bold),

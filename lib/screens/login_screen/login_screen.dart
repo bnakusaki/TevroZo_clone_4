@@ -5,6 +5,7 @@ import 'package:iconly/iconly.dart';
 import 'package:tevrozo_clone_four/screens/login_screen/auth_text_fields.dart';
 import 'package:tevrozo_clone_four/screens/login_screen/federated_auth_buttons.dart';
 import 'package:tevrozo_clone_four/shared/assets.dart';
+import 'package:tevrozo_clone_four/shared/routes.dart';
 import 'package:tevrozo_clone_four/shared/size_config.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -95,7 +96,7 @@ class LoginScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: heightBlocks * 1.2),
                 child: FilledButton(
-                  onPressed: () => context.go('/home'),
+                  onPressed: () => context.goNamed(RouteNames.home),
                   child: Text(l10n.logInButtonLable),
                 ),
               ),
